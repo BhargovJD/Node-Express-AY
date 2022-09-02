@@ -1,0 +1,37 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+
+<p><%= homeStartingContent %></p>
+
+<!-- <table class="table table-striped">
+
+    <thead>
+        <tr>
+          <th scope="col">Post title</th>
+          <th scope="col">Post body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0; i < post_arr.length; i++) { %>
+            <tr>
+              <td><%= post_arr[i].postTitle %></td>
+              <td><%= post_arr[i].postBody %></td>
+            </tr>
+         <% } %>
+      
+      </tbody>
+    
+    </table> -->
+
+    <% for(var i=0; i < post_arr.length; i++) { %>
+       
+          <h1><%= post_arr[i].postTitle %></h1>
+          <p>
+            <%= post_arr[i].postBody.substring(0, 100) + "..." %> 
+            <a href="/posts/<%= post_arr[i].postTitle %>">Read more</a>
+          </p>
+     <% } %>
+A
+
+<%- include("partials/footer") -%>
